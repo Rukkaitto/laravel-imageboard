@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name')->default('Anonymous');
+            $table->string('name')->default('Anonymous')->nullable();
             $table->string('title')->nullable();
             $table->string('com');
             $table->string('file')->nullable();

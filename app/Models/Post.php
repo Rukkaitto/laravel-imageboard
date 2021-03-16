@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        "name", "title", "com", "file"
+    ];
+
     public function replies() {
         return $this->belongsToMany(Post::class, 'post_post', 'reply_id', 'post_id');
     }
