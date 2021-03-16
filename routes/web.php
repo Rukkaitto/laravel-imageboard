@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('boards', \App\Http\Controllers\BoardController::class)->only([
+   'index', 'show'
+]);
+
+Route::resource('boards.posts', \App\Http\Controllers\PostController::class)->only([
+    'show', 'create'
+]);
