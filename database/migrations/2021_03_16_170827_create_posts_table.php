@@ -16,10 +16,10 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('title');
+            $table->string('name')->default('Anonymous');
+            $table->string('title')->nullable();
             $table->string('com');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->foreignId('post_id')->nullable()->constrained();
 
             $table->string('board_id', 4);

@@ -13,14 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\BoardController::class, 'index'])->name('boards.index');
 
-Route::resource('boards', \App\Http\Controllers\BoardController::class)->only([
-   'index', 'show'
-]);
+Route::get('/{board}', [\App\Http\Controllers\PostController::class, 'index'])->name('posts.index');
 
-Route::resource('boards.posts', \App\Http\Controllers\PostController::class)->only([
-    'show', 'create'
-]);
+Route::post('/{board}/posts', [\App\Http\Controllers\PostController::class, 'createThread'])->name('posts.createThread');
+
+Route::post('/{board}/{post}/replies', [\App\Http\Controllers\PostController::class, 'createReply'])->name('posts.createReply');
+
+Route::get('/{board}/{post}', [\App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
