@@ -3,7 +3,7 @@
 <ul>
     @foreach($boards as $board)
         <li>
-            <a href="{{ route('posts.index', $board) }}">/{{ $board->id }}/ - {{ $board->name }}</a>
+            <a href="{{ route('threads.index', $board) }}">/{{ $board->id }}/ - {{ $board->name }}</a>
         </li>
     @endforeach
 </ul>

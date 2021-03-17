@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostPostTable extends Migration
+class CreateRepliesRepliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePostPostTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_post', function (Blueprint $table) {
-            $table->foreignId('post_id')->constrained();
+        Schema::create('replies_replies', function (Blueprint $table) {
+            $table->foreignId('reply_id')->constrained();
 
-            $table->bigInteger('reply_id')->unsigned();
-            $table->foreign('reply_id')->references('id')->on('posts');
+            $table->bigInteger('quote_id')->unsigned();
+            $table->foreign('quote_id')->references('id')->on('replies');
         });
     }
 
@@ -28,6 +28,6 @@ class CreatePostPostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_post');
+        Schema::dropIfExists('replies_replies');
     }
 }

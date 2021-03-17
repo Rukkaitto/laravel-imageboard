@@ -10,8 +10,8 @@ class Board extends Model
     use HasFactory;
     public $incrementing = false;
 
-    public function posts()
+    public function threads()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Thread::class);
     }
 }
