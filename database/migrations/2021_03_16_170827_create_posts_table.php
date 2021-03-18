@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name')->default('Anonymous')->nullable();
+            $table->string('title')->nullable();
             $table->string('com');
             $table->string('file')->nullable();
 

@@ -1,3 +1,11 @@
+<form action="{{ route('posts.store', [$board, $thread]) }}" method="post">
+    @csrf
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Title" name="title">
+    <textarea placeholder="Comment" name="com"></textarea>
+    <input type="submit" value="Submit">
+</form>
+
 <ul>
     <li id="{{ $thread->id }}">
         No. {{ $thread->id }} {{ $thread->name }}: {{ $thread->com }}
