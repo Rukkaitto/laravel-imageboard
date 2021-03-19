@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form action="{{ route('posts.store', [$board, $thread]) }}" method="post">
     @csrf
     <input type="text" placeholder="Name" name="name">
@@ -22,3 +25,4 @@
         </li>
     @endforeach
 </ul>
+@endsection

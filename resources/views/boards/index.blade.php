@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1>Image board</h1>
 
 <ul>
@@ -7,3 +10,4 @@
         </li>
     @endforeach
 </ul>
+@endsection

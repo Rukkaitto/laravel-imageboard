@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <h1>/{{ $board->id }}/ - {{ $board->name }}</h1>
 
 <form action="{{ route('threads.store', $board) }}" method="post">
@@ -13,3 +16,4 @@
         <li>No. {{ $thread->id }} {{ $thread->name }}: {{ $thread->com }} <a href="{{ route('posts.index', [$board, $thread]) }}">Go to thread</a></li>
     @endforeach
 </ul>
+@endsection
