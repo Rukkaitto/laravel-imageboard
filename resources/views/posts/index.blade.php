@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    @isset($thread->title)
+        /{{ $board->id }}/ - {{$thread->title}}
+    @else
+        /{{ $board->id }}/ - {{$thread->com}}
+    @endisset
+@endsection
+
 @section('content')
 <form action="{{ route('posts.store', [$board, $thread]) }}" method="post">
     @csrf

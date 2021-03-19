@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
+@section('title')
+    Laravel Imageboard
+@endsection
+
 @section('content')
+
+    <div class="">
+
+    </div>
 <h1>Image board</h1>
 
 <ul>

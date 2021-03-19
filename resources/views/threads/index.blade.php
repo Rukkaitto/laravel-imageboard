@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    /{{ $board->id }}/ - {{ $board->name }}
+@endsection
+
 @section('content')
 <h1>/{{ $board->id }}/ - {{ $board->name }}</h1>
 
