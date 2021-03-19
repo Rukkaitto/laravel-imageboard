@@ -5,10 +5,17 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+        transitionProperty: {
+            'width': 'width'
+        },
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+        width: ['responsive', 'hover', 'focus', 'active', 'focus-within'],
+        visibility: ['hover', 'focus', 'group-hover'],
+    },
   },
   plugins: [],
 }
