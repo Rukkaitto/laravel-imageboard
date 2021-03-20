@@ -15,10 +15,19 @@ class ThreadController extends Controller
 
     public function store(Request $request, Board $board) {
         $request->validate([
-           'com' => 'required',
+            'com' => 'required',
+            'file' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $board->posts()->save(Post::make($request->all()));
+        $thread = Post::make($request->all());
+
+        if($request->file('file')) {
+            $filename = time() . '.' . $request->file('file')->extension();
+            $thread->file = '/images/' . $filename;
+            $request->file('file')->move(public_path('images'), $filename);
+        }
+
+        $board->posts()->save($thread);
         return redirect(route('threads.index', $board));
     }
 }

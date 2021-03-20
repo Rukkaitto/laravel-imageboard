@@ -26800,19 +26800,11 @@ video {
   visibility: hidden;
 }
 
-.hover\:visible:hover {
+.active\:visible:active {
   visibility: visible;
 }
 
-.hover\:invisible:hover {
-  visibility: hidden;
-}
-
-.focus\:visible:focus {
-  visibility: visible;
-}
-
-.focus\:invisible:focus {
+.active\:invisible:active {
   visibility: hidden;
 }
 
@@ -58514,19 +58506,11 @@ video {
     visibility: hidden;
   }
 
-  .sm\:hover\:visible:hover {
+  .sm\:active\:visible:active {
     visibility: visible;
   }
 
-  .sm\:hover\:invisible:hover {
-    visibility: hidden;
-  }
-
-  .sm\:focus\:visible:focus {
-    visibility: visible;
-  }
-
-  .sm\:focus\:invisible:focus {
+  .sm\:active\:invisible:active {
     visibility: hidden;
   }
 
@@ -90163,19 +90147,11 @@ video {
     visibility: hidden;
   }
 
-  .md\:hover\:visible:hover {
+  .md\:active\:visible:active {
     visibility: visible;
   }
 
-  .md\:hover\:invisible:hover {
-    visibility: hidden;
-  }
-
-  .md\:focus\:visible:focus {
-    visibility: visible;
-  }
-
-  .md\:focus\:invisible:focus {
+  .md\:active\:invisible:active {
     visibility: hidden;
   }
 
@@ -121812,19 +121788,11 @@ video {
     visibility: hidden;
   }
 
-  .lg\:hover\:visible:hover {
+  .lg\:active\:visible:active {
     visibility: visible;
   }
 
-  .lg\:hover\:invisible:hover {
-    visibility: hidden;
-  }
-
-  .lg\:focus\:visible:focus {
-    visibility: visible;
-  }
-
-  .lg\:focus\:invisible:focus {
+  .lg\:active\:invisible:active {
     visibility: hidden;
   }
 
@@ -153461,19 +153429,11 @@ video {
     visibility: hidden;
   }
 
-  .xl\:hover\:visible:hover {
+  .xl\:active\:visible:active {
     visibility: visible;
   }
 
-  .xl\:hover\:invisible:hover {
-    visibility: hidden;
-  }
-
-  .xl\:focus\:visible:focus {
-    visibility: visible;
-  }
-
-  .xl\:focus\:invisible:focus {
+  .xl\:active\:invisible:active {
     visibility: hidden;
   }
 
@@ -185110,19 +185070,11 @@ video {
     visibility: hidden;
   }
 
-  .\32xl\:hover\:visible:hover {
+  .\32xl\:active\:visible:active {
     visibility: visible;
   }
 
-  .\32xl\:hover\:invisible:hover {
-    visibility: hidden;
-  }
-
-  .\32xl\:focus\:visible:focus {
-    visibility: visible;
-  }
-
-  .\32xl\:focus\:invisible:focus {
+  .\32xl\:active\:invisible:active {
     visibility: hidden;
   }
 
