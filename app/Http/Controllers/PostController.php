@@ -35,6 +35,8 @@ class PostController extends Controller
             return str_replace('>>', '', $match);
         }, $matches);
 
+        $post->name = $post->name ? $post->name : 'Anonymous';
+
         $thread->replies()->save($post);
         $post->quoted()->attach($matches[0]);
         return redirect(route('posts.index', [$board, $thread]));

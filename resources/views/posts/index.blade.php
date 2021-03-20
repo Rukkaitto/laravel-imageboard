@@ -9,19 +9,12 @@
 @endsection
 
 @section('content')
-<form action="{{ route('posts.store', [$board, $thread]) }}" method="post" enctype="multipart/form-data">
-    @csrf
-    <input type="text" placeholder="Name" name="name">
-    <input type="text" placeholder="Title" name="title">
-    <textarea placeholder="Comment" name="com"></textarea>
-    <input type="file" name="file">
-    <input type="submit" value="Submit">
-</form>
+    <x-post-form :route="route('posts.store', [$board, $thread])"></x-post-form>
 
-<ul>
+<div class="flex flex-col items-start space-y-3">
     <x-post-card type="post" :post="$thread"></x-post-card>
     @foreach($replies as $reply)
         <x-post-card type="post" :post="$reply"></x-post-card>
     @endforeach
-</ul>
+</div>
 @endsection

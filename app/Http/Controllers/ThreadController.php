@@ -27,6 +27,8 @@ class ThreadController extends Controller
             $request->file('file')->move(public_path('images'), $filename);
         }
 
+        $thread->name = $thread->name ? $thread->name : 'Anonymous';
+
         $board->posts()->save($thread);
         return redirect(route('threads.index', $board));
     }

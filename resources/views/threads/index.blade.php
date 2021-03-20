@@ -5,20 +5,15 @@
 @endsection
 
 @section('content')
-<h1>/{{ $board->id }}/ - {{ $board->name }}</h1>
+<div class="p-5 self-center text-4xl font-bold">
+    /{{ $board->id }}/ - {{ $board->name }}
+</div>
 
-<form action="{{ route('threads.store', $board) }}" method="post" enctype="multipart/form-data">
-    @csrf
-    <input type="text" placeholder="Name" name="name">
-    <input type="text" placeholder="Title" name="title">
-    <textarea placeholder="Comment" name="com"></textarea>
-    <input type="file" name="file">
-    <input type="submit" value="Submit">
-</form>
+<x-post-form :route="route('threads.store', $board)"></x-post-form>
 
-<ul>
+<div class="flex flex-col items-start space-y-3">
     @foreach($threads as $thread)
         <x-post-card type="thread" :post="$thread" :route="route('posts.index', [$board, $thread])"></x-post-card>
     @endforeach
-</ul>
+</div>
 @endsection
