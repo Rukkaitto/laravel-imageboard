@@ -19,20 +19,9 @@
 </form>
 
 <ul>
-    <li id="{{ $thread->id }}">
-        No. {{ $thread->id }} {{ $thread->name }}: {{ $thread->com }}
-        @foreach($thread->quoters as $quoter)
-            <a href="#{{ $quoter->id }}">>>{{ $quoter->id }}</a>
-        @endforeach
-    </li>
+    <x-post-card type="post" :post="$thread"></x-post-card>
     @foreach($replies as $reply)
-        <li id="{{ $reply->id }}">
-            <img src="{{ $reply->file }}"/>
-            No. {{ $reply->id }} {{ $reply->name }}: {{ $reply->com }}
-            @foreach($reply->quoters as $quoter)
-                <a href="#{{ $quoter->id }}">>>{{ $quoter->id }}</a>
-            @endforeach
-        </li>
+        <x-post-card type="post" :post="$reply"></x-post-card>
     @endforeach
 </ul>
 @endsection

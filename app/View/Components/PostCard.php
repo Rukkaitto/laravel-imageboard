@@ -2,19 +2,18 @@
 
 namespace App\View\Components;
 
+use App\Models\Post;
 use Illuminate\View\Component;
 
 class PostCard extends Component
 {
-    public $title, $name, $com, $id, $createdAt;
+    public $post, $type, $route;
 
-    public function __construct($title, $name, $com, $id, $createdAt)
+    public function __construct(Post $post, String $type, $route = null)
     {
-        $this->title = $title;
-        $this->name = $name;
-        $this->com = $com;
-        $this->id = $id;
-        $this->createdAt = $createdAt;
+        $this->post = $post;
+        $this->type = $type;
+        $this->route = $route;
     }
 
     public function render()

@@ -18,8 +18,7 @@
 
 <ul>
     @foreach($threads as $thread)
-        <img src="{{ $thread->file }}"/>
-        <li>No. {{ $thread->id }} {{ $thread->name }}: {{ $thread->com }} <a href="{{ route('posts.index', [$board, $thread]) }}">Go to thread</a></li>
+        <x-post-card type="thread" :post="$thread" :route="route('posts.index', [$board, $thread])"></x-post-card>
     @endforeach
 </ul>
 @endsection
