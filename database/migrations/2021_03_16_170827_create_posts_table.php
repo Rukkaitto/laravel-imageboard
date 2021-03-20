@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('name')->nullable();
             $table->string('title')->nullable();
-            $table->string('com');
+            $table->text('com');
             $table->string('file')->nullable();
 
             $table->string('board_id', 4)->nullable();

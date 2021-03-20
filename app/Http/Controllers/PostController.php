@@ -35,6 +35,7 @@ class PostController extends Controller
             return str_replace('>>', '', $match);
         }, $matches);
 
+        // Default name
         $post->name = $post->name ? $post->name : 'Anonymous';
 
         $thread->replies()->save($post);
