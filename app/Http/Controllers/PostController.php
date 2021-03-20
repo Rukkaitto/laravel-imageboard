@@ -21,13 +21,23 @@ class PostController extends Controller
 
         $post = Post::make($request->all());
 
+        // File storage
         if($request->file('file')) {
             $filename = time() . '.' . $request->file('file')->extension();
             $post->file = '/images/' . $filename;
             $request->file('file')->move(public_path('images'), $filename);
         }
 
+        // Quotelinks
+        $quoteRegex = '/>>[0-9]*/';
+        preg_match_all($quoteRegex, $post->com, $matches);
+        $matches = array_map(function($match) {
+            return str_replace('>>', '', $match);
+        }, $matches);
+
         $thread->replies()->save($post);
+        $post->quoted()->attach($matches[0]);
         return redirect(route('posts.index', [$board, $thread]));
     }
+
 }

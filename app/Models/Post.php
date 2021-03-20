@@ -14,11 +14,11 @@ class Post extends Model
     ];
 
     public function quoters() {
-        return $this->belongsToMany(Post::class, 'post_post', 'quoted_id', 'quoter_id');
+        return $this->belongsToMany(Post::class, 'post_post', 'quoter_id', 'quoted_id');
     }
 
     public function quoted() {
-        return $this->belongsToMany(Post::class, 'post_post', 'quoter_id', 'quoted_id');
+        return $this->belongsToMany(Post::class, 'post_post', 'quoted_id', 'quoter_id');
     }
 
     public function replies() {
