@@ -5,17 +5,13 @@
 @endsection
 
 @section('content')
-
-    <div class="">
-
-    </div>
-<h1>Image board</h1>
-
-<ul>
+<div class="flex flex-col space-y-3 p-3">
     @foreach($boards as $board)
-        <li>
-            <a href="{{ route('threads.index', $board) }}">/{{ $board->id }}/ - {{ $board->name }}</a>
-        </li>
+        <a href="{{ route('threads.index', $board) }}">
+            <div class="bg-gray-100 shadow-md p-5 font-bold rounded-md">
+                /{{ $board->id }}/ - {{ $board->name }}
+            </div>
+        </a>
     @endforeach
-</ul>
+</div>
 @endsection
