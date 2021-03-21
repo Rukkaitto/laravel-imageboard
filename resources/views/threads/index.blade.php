@@ -9,7 +9,7 @@
     /{{ $board->id }}/ - {{ $board->name }}
 </div>
 
-<div class="flex flex-col space-y-3 p-3">
+<div class="flex flex-col space-y-3 p-3 md:items-start">
     @foreach($threads as $thread)
         <x-post-card type="thread" :post="$thread" :route="route('posts.index', [$board, $thread])"></x-post-card>
     @endforeach
