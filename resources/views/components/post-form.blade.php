@@ -1,6 +1,6 @@
-<form class="flex flex-col self-center space-y-4 shadow-md p-5 rounded-xl fixed bottom-0 right-0 bg-white border" action="{{ $route }}" method="post" enctype="multipart/form-data">
+<form class="flex flex-col space-y-4 shadow-md p-5 rounded-xl bottom-0 bg-white border" action="{{ $route }}" method="post" enctype="multipart/form-data">
     @csrf
-    <div class="flex flex-row space-x-4">
+    <div class="flex flex-col space-y-4">
         <input class="border-dashed border-b-2 outline-none" type="text" placeholder="Name" name="name">
         @if($type == 'thread')
             <input class="border-dashed border-b-2 outline-none" type="text" placeholder="Title" name="title">
