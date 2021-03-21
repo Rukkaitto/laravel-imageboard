@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="flex flex-col space-y-3 p-3">
+<div class="flex flex-col space-y-3 p-3 md:items-start">
     <x-post-card type="post" :post="$thread"></x-post-card>
     @foreach($replies as $reply)
         <x-post-card type="post" :post="$reply"></x-post-card>

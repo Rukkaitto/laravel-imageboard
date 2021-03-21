@@ -11,7 +11,7 @@
             <x-navbar></x-navbar>
 
             <!-- Main content -->
-            <div class="flex flex-col w-full overflow-y-auto pt-14">
+            <div class="flex flex-col overflow-y-auto pt-14  md:w-1/2 md:self-center">
                 @yield('content')
             </div>
         </div>
