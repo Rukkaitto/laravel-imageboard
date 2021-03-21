@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Board;
 use App\Models\Post;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\App;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,12 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Board::factory()->count(10)->create()->each(function ($board) {
-            $board->posts()->saveMany(Post::factory()->count(10)->make())->each(function ($thread) {
-                $thread->replies()->saveMany(Post::factory()->count(10)->make())->each(function ($reply) {
-                    $reply->quoters()->saveMany(Post::factory()->count(2)->make());
-                });
-            });
-        });
+        if(App::Environment('local')) {
+            $this->call(DevSeeder::class);
+        }
+
+        if(App::Environment('production')) {
+            $this->call(ProdSeeder::class);
+        }
     }
 }
